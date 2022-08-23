@@ -21,6 +21,13 @@ export const weatherSlice = createSlice({
         onSetActive(state, { payload }) {
             state.active = payload;
         },
+
+        onSetLoadingWeather(state, { payload }) {
+            state.isLoadingWeather = payload.bool;
+        },
+        onSetLoadingForecast(state, { payload }) {
+            state.isLoadingForecast = payload.bool;
+        },
     }
 });
 
@@ -28,4 +35,6 @@ export const {
     onLoadWeather,
     onLoadForecast,
     onSetActive,
+    onSetLoadingWeather,
+    onSetLoadingForecast,
 } = weatherSlice.actions;
