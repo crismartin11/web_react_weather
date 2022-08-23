@@ -1,5 +1,5 @@
 
-const Navbar = (props) => {
+export const Navbar = (props) => {
   return (
     <div className="navbar navbar-dark bg-dark mb-4 px-4">
         <span className="navbar-brand">
@@ -10,5 +10,3 @@ const Navbar = (props) => {
     </div>
   )
 };
-
-export default Navbar;

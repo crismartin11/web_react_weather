@@ -1,3 +1,2 @@
-
-import * from './store';
-import * from './weather/weatherSlice';
+export * from './weather/weatherSlice';
+export * from './store';

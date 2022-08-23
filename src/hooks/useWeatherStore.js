@@ -2,9 +2,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import qs from "qs";
 import { format } from 'date-fns';
-import weatherApi from './../api/weatherApi';
+import { weatherApi } from './../api';
 import { onLoadWeather, onLoadForecast, onSetActive } from '../store/weather/weatherSlice';
-import { getForecastList } from './../helpers/getForecastList';
+import { getForecastList } from './../helpers';
 
 export const useWeatherStore = () => {
 

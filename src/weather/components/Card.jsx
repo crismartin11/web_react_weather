@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-const Card = ({item, onClick, isActive}) => {
+export const Card = ({item, onClick, isActive}) => {
     const date = new Date(item.dt_txt);
 
     return (
@@ -45,5 +45,3 @@ const Card = ({item, onClick, isActive}) => {
         </div>
     )
 };
-
-export default Card;

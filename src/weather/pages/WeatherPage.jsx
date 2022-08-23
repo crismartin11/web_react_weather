@@ -1,16 +1,9 @@
 import { useEffect, useState } from 'react';
 import { format } from 'date-fns';
-import weatherApi from './../../api/weatherApi';
+import { weatherApi } from './../../api';
 import { useWeatherStore } from './../../hooks/useWeatherStore';
-import Navbar from './../components/Navbar';
-import Selector from './../components/Selector';
-import Card from './../components/Card';
-
-const listCity = [
-	{id: 3427212, name: "Partido de Zárate"},
-	{id: 3427213, name: "Zárate"},
-	{id: 3427215, name: "Zapiola"}
-];
+import { Navbar, Selector, Card } from '../';
+import { listCity } from './../../helpers';
 
 export const WeatherPage = (props) => {
 	const { weather, loadWeather, forecast, loadForecast, active, setActive } = useWeatherStore();
@@ -25,9 +18,7 @@ export const WeatherPage = (props) => {
 
 	if (!weather || !forecast) {
 		return (<div className="App">...loading</div>)
-	}	
-	//console.log("weather", weather);
-	//console.log("forecast", forecast);
+	}
 
 	return (
 		<div className="App">
@@ -39,7 +30,6 @@ export const WeatherPage = (props) => {
 			</div>
 
 			<div className="container">
-				<p>here the body</p>
 				<b>{weather.name} (id: {forecast.city?.id})</b>	
 	
 				<div className="row">

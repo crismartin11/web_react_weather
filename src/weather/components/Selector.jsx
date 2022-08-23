@@ -1,5 +1,5 @@
 
-const Selector = ({ list, selected, setSelected }) => {
+export const Selector = ({ list, selected, setSelected }) => {
 
 	const handleChange = (event) => setSelected(list.find(x => x.id == event.target.value));
 	
@@ -14,7 +14,4 @@ const Selector = ({ list, selected, setSelected }) => {
 				</select>
 			</div>
 		</form>
-)
-};
-
-export default Selector;
+)};

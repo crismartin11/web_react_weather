@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { getEnvVariables } from './../helpers/getEnvVariables';
+import { getEnvVariables } from './../helpers';
 
 const { VITE_WEATHER_API_URL, VITE_API_KEY } = getEnvVariables();
 
