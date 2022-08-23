@@ -87,3 +87,9 @@ button:focus-visible {
 .read-the-docs {
   color: #888;
 }
+
+.loading-container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}

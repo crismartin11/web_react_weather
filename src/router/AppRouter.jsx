@@ -4,8 +4,8 @@ import { WeatherPage } from './../weather';
 export const AppRouter = () => {
   	return (
     	<Routes>
-			<Route path="/" element={ <WeatherPage /> } />
-            <Route path="/*" element={ <Navigate to="/" /> } />
+			<Route path="/weather" element={ <WeatherPage /> } />
+            <Route path="/*" element={ <Navigate to="/weather" /> } />
     	</Routes>
   	)
 };

@@ -6,7 +6,7 @@ export const Selector = ({ list, selected, setSelected }) => {
 	return (
 		<form>
 			<div className="form-group">
-				<label htmlFor="cities">Cities</label>
+				<label htmlFor="cities">Seleccione una ciudad</label>
 				<select className="form-control" id="cities" onChange={handleChange}>
 					{list && (
 						list.map(element => <option key={element.id} value={element.id}>{element.name}</option>)
