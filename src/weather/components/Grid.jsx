@@ -39,7 +39,7 @@ export const Grid = (props) => {
                             <Card type="today" item={weather} onClick={() => handleClick(weather)} isActive={weather.dt === active?.dt} />
 
                             {forecast.list.map((item, i) => (
-                                <Card type="forecast" item={item} onClick={() => handleClick(item)} isActive={item.dt === active?.dt} />
+                                <Card key={i} type="forecast" item={item} onClick={() => handleClick(item)} isActive={item.dt === active?.dt} />
                             ))}	
                         </div>
                     </>

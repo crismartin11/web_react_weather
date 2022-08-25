@@ -1,14 +1,14 @@
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
+import { useWeatherStore } from './../../hooks/useWeatherStore';
 
 export const Card = ({type, item, onClick, isActive}) => {
     const { dt_txt, weather, main } = item;
     const { temp, feels_like, temp_min, temp_max } = main;
+    
+    const { getUrlIconApi } = useWeatherStore();
 
     const date = new Date(dt_txt);
-
-    const src = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`; //TODO: in helper
-
     const getFormatedTemp = (tempParam) => tempParam.toLocaleString(undefined, {maximumFractionDigits:1});
 
     return (
@@ -22,7 +22,7 @@ export const Card = ({type, item, onClick, isActive}) => {
                     </div>
 
                     <div className="icon mb-3">
-                        <img id={weather[0].icon} src={src} alt={weather[0].icon} />
+                        <img id={weather[0].icon} src={getUrlIconApi(weather[0].icon)} alt={weather[0].icon} />
                     </div>
 
                     <div className="temperature">
@@ -32,9 +32,6 @@ export const Card = ({type, item, onClick, isActive}) => {
                             <span>{type==="today" ? `St. ${getFormatedTemp(feels_like)}°` : ""}</span>
                     </div>
 
-                    {/* <div className="minmax label">
-                        <span className="min">Rango de T</span>
-                    </div> */}
                     <div className="item minmax mb-2">
                         <label>Rango de T</label>
                         <span className="min">{getFormatedTemp(temp_min)}°</span> / <span className="max">{getFormatedTemp(temp_max)}°</span>

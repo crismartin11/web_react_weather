@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 import qs from "qs";
 import { format } from 'date-fns';
-import { weatherApi } from './../api';
+import { weatherApi, urlIconApi } from './../api';
 import { onLoadWeather, onLoadForecast, onSetActive, onSetLoadingWeather, onSetLoadingForecast } from '../store/weather/weatherSlice';
 import { getForecastList } from './../helpers';
 
@@ -45,6 +45,8 @@ export const useWeatherStore = () => {
         dispatch(onSetActive({...data}));
     }
 
+    const getUrlIconApi = (iconName) => `${urlIconApi}${iconName}@2x.png`;
+
     return {
         // properties
         weather,
@@ -57,5 +59,6 @@ export const useWeatherStore = () => {
         loadWeather,
         loadForecast,
         setActive,
+        getUrlIconApi,
     }
 }
