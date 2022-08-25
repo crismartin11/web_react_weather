@@ -16,4 +16,4 @@ Pasos para ejecutar en ambiente local:
     - Cambiar el nombre de .env.template por .env
 
     - Cambiar la variable de ambiente VITE_API_KEY por una clave propia generada desde www.openweathermap.org.
-      Importante: Luego de generar una nueva clave, ésta puede tadar algunas horas en quedar activada y lista para usar.
+      Importante: Luego de generar una nueva clave, ésta puede tardar algunas horas en quedar activada y lista para usar.
