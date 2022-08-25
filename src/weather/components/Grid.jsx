@@ -15,7 +15,8 @@ export const Grid = (props) => {
 
     const handleClick = (item) => setActive(item);
 
-    const showLoading = isLoadingWeather || isLoadingForecast || !weather || !forecast;
+    const isLoading = isLoadingWeather || isLoadingForecast;
+    const hasData = weather && forecast;
 
     return (
         <div className="container">
@@ -28,9 +29,9 @@ export const Grid = (props) => {
             </div>
 
             <div className="row mb-4">
-                {showLoading && (<Loading />)}
+                {isLoading && (<Loading />)}
 
-                {!showLoading && (
+                {!isLoading && hasData && (
                     <>
                         <h4>{weather.name.toUpperCase()}</h4>
 
