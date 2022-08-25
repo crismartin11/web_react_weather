@@ -1,0 +1,83 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.row-cards {
+  margin-left: 0;
+}
+
+select.form-control:focus {
+  box-shadow: none;
+}
+
+.card {
+	height: 100%;
+	&.active {
+		/* border-color: #000; */
+	};
+	&.today {
+		background-color: #999fff;
+	};
+
+	.card-body {
+		.when {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+	
+			.day {
+				font-size: .8125rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				color: #444;
+			};
+	
+			.date {
+				font-weight: 400;
+				color: #666;
+			};
+		};
+		.temperature {
+			font-weight: 400;
+			min-height: 1.5em;
+			&.feels-like {
+				color: #666;
+			};
+		};
+		.minmax {
+			font-weight: 400;
+			.min {
+				color: #cb2c2a;
+		  	};
+			.max {
+				color: #2a65cb;
+		  	}
+		};
+		.item label {
+			display: block;
+			font-size: small;
+			font-weight: bold;
+		};
+	};
+}
+
+.loading-container {
+	height: 40vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

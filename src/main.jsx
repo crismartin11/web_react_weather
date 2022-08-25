@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 
-import './styles.css';
+import './styles.scss';
 import { WeatherApp } from './WeatherApp';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

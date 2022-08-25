@@ -36,14 +36,10 @@ export const Grid = (props) => {
                         <h4>{weather.name.toUpperCase()}</h4>
 
                         <div className="row row-cards">
-                            <div className="col-sm-2 mb-4">
-                                <Card type="today" item={weather} onClick={() => handleClick(weather)} isActive={weather.dt === active?.dt} />
-                            </div>
+                            <Card type="today" item={weather} onClick={() => handleClick(weather)} isActive={weather.dt === active?.dt} />
 
                             {forecast.list.map((item, i) => (
-                                <div className="col-sm-2 mb-4" key={i}>
-                                    <Card type="forecast" item={item} onClick={() => handleClick(item)} isActive={item.dt === active?.dt} />
-                                </div>
+                                <Card type="forecast" item={item} onClick={() => handleClick(item)} isActive={item.dt === active?.dt} />
                             ))}	
                         </div>
                     </>
