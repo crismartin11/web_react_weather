@@ -8,7 +8,7 @@ const weatherApi = axios.create({
 });
 
 weatherApi.interceptors.request.use(config => {
-    config.url += `&appid=${VITE_API_KEY}`;
+    config.url += `&appid=${VITE_API_KEY}&units=metric`;
     return config;
 });
 

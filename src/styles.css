@@ -76,20 +76,83 @@ button:focus-visible {
   }
 }
 
+.row-cards {
+  margin-left: 0;
+}
+
+select.form-control:focus {
+  box-shadow: none;
+}
+
 .card {
   /* padding: 2em; */
+  height: 100%;
 }
 
 .card.active {
-  border-color: #000;
+  /* border-color: #000; */
 }
+
+.card.day {
+  
+}
+
+.card.today {
+  background-color: #999fff;
+}
+
+.card.day .card-body .when {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card.day .card-body .when .day {
+  font-size: .8125rem;
+  /* line-height: 1.2; */
+  font-weight: 700;
+  text-transform: uppercase;
+  /* margin-bottom: 5px; */
+  color: #444;
+}
+.card.day .card-body .when .date {
+  font-weight: 400;
+  color: #666;
+}
+
+.card.day .card-body .temperature {
+  font-weight: 400;
+  min-height: 1.5em;
+}
+
+.card.day .card-body .temperature.feels-like {
+  color: #666;
+}
+
+.card.day .card-body .minmax {
+  font-weight: 400;
+}
+.card.day .card-body .minmax .min {
+  color: #cb2c2a;
+}
+.card.day .card-body .minmax .max {
+  color: #2a65cb;
+}
+
+.card.day .card-body .item label {
+  display: block;
+  font-size: small;
+  font-weight: bold;
+}
+
 
 .read-the-docs {
   color: #888;
 }
 
 .loading-container {
-  position: fixed;
-  left: 50%;
-  top: 50%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

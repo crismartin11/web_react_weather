@@ -1,44 +1,52 @@
 import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
 
-export const Card = ({item, onClick, isActive}) => {
-    const date = new Date(item.dt_txt);
+export const Card = ({type, item, onClick, isActive}) => {
+    const { dt_txt, weather, main } = item;
+    const { temp, feels_like, temp_min, temp_max } = main;
+
+    const date = new Date(dt_txt);
+
+    const src = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`; //TODO: in helper
+
+    const getFormatedTemp = (tempParam) => tempParam.toLocaleString(undefined, {maximumFractionDigits:1});
 
     return (
-        <div className={`card ${isActive && "active"}`} onClick={onClick} >
+        <div className={`card day ${isActive && "active"} ${type}`} onClick={onClick} >
             <div className="card-body">
-                <h5 className="card-title">{format(date, 'EEEE')}</h5>
-                <p className="card-text">{format(date, 'dd-MM')}</p>
 
-                <div className="">{item.weather[0].icon}</div>{/*  icono */}
-                
-                <br />
-                <div className="">
-                    <label>Temp.</label>
-                    <span>{item.main.temp}</span>
+                <div className="when mb-3">
+                    <span className="day">{type==="today" ? "HOY" : format(date, 'EEEE', {locale: es})}</span>
+                    <span className="date">{format(date, 'dd-MM')}</span>
                 </div>
 
-                <br />
-                <div className="">
-                    <label>Temp. min/max</label>
-                    <span>{item.main.temp_min}/{item.main.temp_max}</span>
-                </div>
-                
-                <br />
-                <div className="">
-                    <label>Sens. térmica</label>
-                    <span>{item.main.feels_like}</span>
+                <div className="icon mb-3">
+                    <img id={weather[0].icon} src={src} alt={weather[0].icon} />
                 </div>
 
-                <br />
-                <div className="">
+                <div className="temperature">
+                        <b>{type==="today" ? `T. ${getFormatedTemp(temp)}°` : ""}</b>
+                </div>
+                <div className="temperature feels-like mb-3">
+                        <span>{type==="today" ? `St. ${getFormatedTemp(feels_like)}°` : ""}</span>
+                </div>
+
+                {/* <div className="minmax label">
+                    <span className="min">Rango de T</span>
+                </div> */}
+                <div className="item minmax mb-2">
+                    <label>Rango de T</label>
+                    <span className="min">{getFormatedTemp(temp_min)}°</span> / <span className="max">{getFormatedTemp(temp_max)}°</span>
+                </div>
+
+                <div className="item humidity mb-2">
                     <label>Humedad</label>
-                    <span>{item.main.humidity}</span>
+                    <span>{main.humidity} %</span>
                 </div>
 
-                <br />
-                <div className="">
-                    <label>Presión</label>
-                    <span>{item.main.pressure}</span>
+                <div className="item pressure">
+                    <label>Presión at.</label>
+                    <span>{main.pressure} hPa</span>
                 </div>
 
             </div>

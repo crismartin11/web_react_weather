@@ -31,10 +31,10 @@ export const useWeatherStore = () => {
     const loadForecast = async(cityId) => {
         try {
             dispatch(onSetLoadingForecast({bool:true}));
-            const params = qs.stringify({ 'id': cityId, 'cnt': 35 });
+            const params = qs.stringify({ 'id': cityId, 'cnt': 40 });
             const { data } = await weatherApi.get("forecast?"+params);
-            const customList = getForecastList(data.list);
-            dispatch(onLoadForecast({...data, list: customList}));
+            
+            dispatch(onLoadForecast({...data, list: getForecastList(data.list)}));
         } catch(error) {
             dispatch(onSetLoadingForecast({bool:false}));
             Swal.fire("Error al consultar pronóstico.");
