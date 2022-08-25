@@ -1,3 +1,4 @@
+import React from "react";
 
 export const Loading = (props) => {
     return (
@@ -6,5 +7,5 @@ export const Loading = (props) => {
                 <span className="sr-only">Loading...</span>
             </div>
         </div>
-    )
+    );
 };

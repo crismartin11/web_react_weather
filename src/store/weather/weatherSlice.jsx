@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const weatherSlice = createSlice({
-    name: 'weather',
+    name: "weather",
     initialState: {
         isLoadingWeather: false,
         weather: null,
@@ -10,24 +10,24 @@ export const weatherSlice = createSlice({
         forecast: null
     },
     reducers: {
-        onLoadWeather(state, { payload }) {
+        onLoadWeather (state, { payload }) {
             state.isLoadingWeather = false;
             state.weather = payload;
         },
-        onLoadForecast(state, { payload }) {
+        onLoadForecast (state, { payload }) {
             state.isLoadingForecast = false;
             state.forecast = payload;
         },
-        onSetActive(state, { payload }) {
+        onSetActive (state, { payload }) {
             state.active = payload;
         },
 
-        onSetLoadingWeather(state, { payload }) {
+        onSetLoadingWeather (state, { payload }) {
             state.isLoadingWeather = payload.bool;
         },
-        onSetLoadingForecast(state, { payload }) {
+        onSetLoadingForecast (state, { payload }) {
             state.isLoadingForecast = payload.bool;
-        },
+        }
     }
 });
 
@@ -36,5 +36,5 @@ export const {
     onLoadForecast,
     onSetActive,
     onSetLoadingWeather,
-    onSetLoadingForecast,
+    onSetLoadingForecast
 } = weatherSlice.actions;

@@ -1,1 +1,1 @@
-export { default as weatherApi, urlIconApi } from './weatherApi';
+export { default as weatherApi, urlIconApi } from "./weatherApi";
