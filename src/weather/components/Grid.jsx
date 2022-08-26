@@ -2,12 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { useWeatherStore } from "./../../hooks/useWeatherStore";
 import { Selector, Card, Loading } from "../";
-import { listCity } from "./../../helpers";
+import listCity from "./../../assets/cities";
 
 export const Grid = (props) => {
     const { weather, loadWeather, forecast, loadForecast, active, setActive, isLoadingWeather, isLoadingForecast } = useWeatherStore();
     const [selected, setSelected] = useState(listCity[0]);
-
     useEffect(() => {
         loadWeather(selected.id);
         loadForecast(selected.id);
