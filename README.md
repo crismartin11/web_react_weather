@@ -17,3 +17,5 @@ Pasos para ejecutar en ambiente local:
 
     - Cambiar la variable de ambiente VITE_API_KEY por una clave propia generada desde www.openweathermap.org.
       Importante: Luego de generar una nueva clave, ésta puede tardar algunas horas en quedar activada y lista para usar.
+    
+    - Ejecutar npm run dev para levantar el proyecto en ambiente local
